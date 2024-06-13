@@ -42,8 +42,12 @@ import java.util.stream.Collectors;
  *                  .watermark(); //mark
  * </pre>
  */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
+
 public class PdfTransform {
+
+    private PdfTransform(){
+
+    }
 
     /**
      * Create a new {@link PdfTransformBuilder} instance. For safe working, you have to instantiate the builder with this way.
@@ -52,6 +56,7 @@ public class PdfTransform {
      * @param pdfByte
      * @return
      */
+
     public static PdfTransformBuilder get(byte[] pdfByte) {
         PdfTransformBuilder builder = new PdfTransformBuilder();
         builder.add(pdfByte);

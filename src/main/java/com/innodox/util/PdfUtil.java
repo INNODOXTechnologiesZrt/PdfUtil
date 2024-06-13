@@ -4,19 +4,22 @@ import com.innodox.exception.ResourceNotFoundException;
 import com.innodox.model.folding.FoldingLine;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.DocumentException;
+
 import com.itextpdf.text.pdf.*;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FilenameUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.*;
 
-@Slf4j
+
 public class PdfUtil {
 
     private static final BaseColor BASE_COLOR = new BaseColor(127, 127, 127);
-
+    private static final Logger log
+            = LoggerFactory.getLogger(PdfUtil.class);
     /**
      * Retrieves the attachments with PDF files from the given PDF byte array.
      *
